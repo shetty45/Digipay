@@ -1,0 +1,41 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse pay step step-2">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="main-content">
+
+                    <form action="{% url 'transaction:amount_confirmation_request' account.account_number transaction.transaction_id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="send-banance">
+                            <h4>Request amount</h4 >
+                            <span class="mdr">Amount</span>
+                            <div class="input-area">
+                                <input type="text" name="amount" id="amount" placeholder="Amount">
+                            </div>
+    
+                            <p id="new_balance"></p>
+                            <p class="text-danger" id="error-div"></p>
+                        </div>
+                        <!-- Js -->
+
+                        <div class="send-banance pt-0 mt-0">
+                            <span class="mdr">Request Description</span>
+                            <div class="input-area">
+                                <input type="text" name="request" id="request" placeholder="Description">
+                            </div>
+                        </div>
+                        <div class="footer-area mt-40">
+                            <button type="submit" style="padding: 10px 30px; border-radius: 10px; background: rgb(98, 0, 255); color: #fff;" class="active">Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+    {% endblock content %}

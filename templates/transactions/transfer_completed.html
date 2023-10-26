@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'bankaccounts:dashboard' %}" align="center">
+        <h1>Transfer completed</h1>
+        <div class="checkbox">
+            <input type="checkbox" name="" id="confirm">
+            <label for="confirm">Yes or No ?</label>
+            <h2>{{sender}} payment of Rs {{transaction.amount}} is successful</h2>
+            <button type="submit">Dashboard</button>
+        </div>
+    </form>
+</body>
+</html>

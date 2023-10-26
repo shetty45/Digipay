@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2><u>CARD DETAILS</u></h2>
+    {% for data in credit_card %}
+        <br>
+
+        card type : {{ data.card_type }}<br>
+        <a href="{% url 'transaction:credit_card' %}">Card Name : </a>{{ data.name }}<br>
+        Card Number : {{ data.number }}<br>
+        Expiry Month : {{ data.month }}<br>
+        Expiry Year : {{ data.year }}<br>
+        CVV : {{ data.cvv }}<br><br>
+        <button href="">PayBill</button>
+        <button>WithDraw</button><br>
+        <hr>
+    {% endfor %}
+
+  
+
+</body>
+</html>
